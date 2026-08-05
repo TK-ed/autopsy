@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sherlog-cli"
-version = "0.1.1"
+version = "0.1.2"
 description = "Sherlock for your logs — investigate incidents and find root causes."
 readme = "README.md"
 license = { text = "MIT" }
