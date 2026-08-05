@@ -35,13 +35,13 @@ def detect_format(lines: list[str]) -> str:
 
 def get_parser(fmt: str) -> Callable:
     if fmt == "json":
-        from autopsy.parsers import json_parser
+        from sherlog.parsers import json_parser
 
         return json_parser.parse_line
     if fmt == "logfmt":
-        from autopsy.parsers import logfmt_parser
+        from sherlog.parsers import logfmt_parser
 
         return logfmt_parser.parse_line
-    from autopsy.parsers import plaintext_parser
+    from sherlog.parsers import plaintext_parser
 
     return plaintext_parser.parse_line

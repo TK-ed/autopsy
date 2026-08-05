@@ -2,10 +2,10 @@
 
 from datetime import UTC, datetime, timedelta
 
-from autopsy.detect.cascade import detect_cascades
-from autopsy.detect.error_spike import detect_error_spikes
-from autopsy.detect.silence import detect_silences
-from autopsy.parsers.base import LogEvent
+from sherlog.detect.cascade import detect_cascades
+from sherlog.detect.error_spike import detect_error_spikes
+from sherlog.detect.silence import detect_silences
+from sherlog.parsers.base import LogEvent
 
 
 def make_event(ts, level="INFO", service="api", msg="test"):

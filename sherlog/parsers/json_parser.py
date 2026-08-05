@@ -3,7 +3,7 @@
 import json
 from datetime import UTC
 
-from autopsy.utils.timestamp import extract_timestamp
+from sherlog.utils.timestamp import extract_timestamp
 
 from .base import LogEvent
 

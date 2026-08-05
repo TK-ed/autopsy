@@ -3,7 +3,7 @@
 from collections import defaultdict
 from datetime import datetime
 
-from autopsy.parsers.base import LogEvent
+from sherlog.parsers.base import LogEvent
 
 
 def bucket_events(

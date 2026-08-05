@@ -1,9 +1,9 @@
 """Tests for log parsers."""
 
-from autopsy.parsers.auto_detect import detect_format
-from autopsy.parsers.json_parser import parse_line as json_parse
-from autopsy.parsers.logfmt_parser import parse_line as logfmt_parse
-from autopsy.parsers.plaintext_parser import parse_line as plain_parse
+from sherlog.parsers.auto_detect import detect_format
+from sherlog.parsers.json_parser import parse_line as json_parse
+from sherlog.parsers.logfmt_parser import parse_line as logfmt_parse
+from sherlog.parsers.plaintext_parser import parse_line as plain_parse
 
 
 class TestJsonParser:

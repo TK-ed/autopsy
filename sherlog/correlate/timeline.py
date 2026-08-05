@@ -5,7 +5,7 @@ Events without timestamps are placed at the end.
 
 from datetime import UTC, datetime
 
-from autopsy.parsers.base import LogEvent
+from sherlog.parsers.base import LogEvent
 
 
 def build_timeline(event_streams: list[list[LogEvent]]) -> list[LogEvent]:

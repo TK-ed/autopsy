@@ -36,14 +36,14 @@ dev = [
 ]
 
 [project.scripts]
-sherlog = "autopsy.cli:app"
+sherlog = "sherlog.cli:app"
 
 [project.urls]
-Repository  = "https://github.com/TK-ed/autopsy"
-"Bug Tracker" = "https://github.com/TK-ed/autopsy/issues"
+Repository  = "https://github.com/TK-ed/sherlog"
+"Bug Tracker" = "https://github.com/TK-ed/sherlog/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["autopsy"]
+packages = ["sherlog"]
 
 [tool.ruff]
 line-length = 100

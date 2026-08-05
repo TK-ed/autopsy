@@ -2,9 +2,9 @@
 
 from datetime import UTC, datetime
 
-from autopsy.correlate.timeline import build_timeline, filter_window
-from autopsy.correlate.window import bucket_events, error_rate_per_bucket
-from autopsy.parsers.base import LogEvent
+from sherlog.correlate.timeline import build_timeline, filter_window
+from sherlog.correlate.window import bucket_events, error_rate_per_bucket
+from sherlog.parsers.base import LogEvent
 
 
 def make_event(ts_str, level="INFO", service="api", msg="test"):

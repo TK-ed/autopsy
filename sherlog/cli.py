@@ -1,5 +1,5 @@
 """
-autopsy — CLI entry point
+sherlog — CLI entry point
 """
 
 from __future__ import annotations
@@ -13,16 +13,16 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-from autopsy.correlate.timeline import build_timeline, filter_window
-from autopsy.correlate.window import bucket_events, error_rate_per_bucket
-from autopsy.detect import run_all
-from autopsy.ingest.docker_reader import read_docker
-from autopsy.ingest.file_reader import read_file
-from autopsy.ingest.stdin_reader import read_stdin
-from autopsy.report import markdown as md_report
-from autopsy.utils.colors import console, level_style
+from sherlog.correlate.timeline import build_timeline, filter_window
+from sherlog.correlate.window import bucket_events, error_rate_per_bucket
+from sherlog.detect import run_all
+from sherlog.ingest.docker_reader import read_docker
+from sherlog.ingest.file_reader import read_file
+from sherlog.ingest.stdin_reader import read_stdin
+from sherlog.report import markdown as md_report
+from sherlog.utils.colors import console, level_style
 
-app = typer.Typer(help="🔬 autopsy — turn logs into postmortems")
+app = typer.Typer(help="🔬 sherlog — turn logs into postmortems")
 err = Console(stderr=True)
 
 
@@ -79,7 +79,7 @@ def run(
     """
     console.print(
         Panel.fit(
-            "[bold white]🔬 autopsy[/bold white] [dim]— incident postmortem generator[/dim]",
+            "[bold white]🔬 sherlog[/bold white] [dim]— incident postmortem generator[/dim]",
             border_style="cyan",
         )
     )

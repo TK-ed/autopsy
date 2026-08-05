@@ -19,8 +19,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/TK-ed/autopsy.git
-cd autopsy
+git clone https://github.com/TK-ed/sherlog.git
+cd sherlog
 ```
 
 ### 2. Set up the development environment
@@ -42,7 +42,7 @@ This will:
 Run the CLI using:
 
 ```bash
-uv run autopsy --help
+uv run sherlog --help
 ```
 
 ## Running Tests
@@ -80,8 +80,8 @@ uv run pytest -v
 ## Project Structure
 
 ```text
-autopsy/
-├── autopsy/
+sherlog/
+├── sherlog/
 │   ├── correlate/     # Timeline building and event correlation
 │   ├── detect/        # Anomaly detection algorithms
 │   ├── ingest/        # Log input sources

@@ -5,7 +5,7 @@ Uses regex to extract timestamp + level from any line.
 
 import re
 
-from autopsy.utils.timestamp import extract_timestamp
+from sherlog.utils.timestamp import extract_timestamp
 
 from .base import LogEvent
 

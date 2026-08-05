@@ -1,6 +1,6 @@
 """Detect when a service suddenly stops emitting logs."""
 
-from autopsy.parsers.base import LogEvent
+from sherlog.parsers.base import LogEvent
 
 SILENCE_THRESHOLD_SECONDS = 120  # 2 minutes of silence = anomaly
 

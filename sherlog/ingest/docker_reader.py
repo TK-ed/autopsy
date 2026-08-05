@@ -3,8 +3,8 @@
 import subprocess
 from collections.abc import Iterator
 
-from autopsy.parsers.auto_detect import detect_format, get_parser
-from autopsy.parsers.base import LogEvent
+from sherlog.parsers.auto_detect import detect_format, get_parser
+from sherlog.parsers.base import LogEvent
 
 
 def read_docker(

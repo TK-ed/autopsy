@@ -3,7 +3,7 @@ Detect cascading failures: service A starts erroring, then service B
 starts erroring within a short window — suggesting A caused B.
 """
 
-from autopsy.parsers.base import LogEvent
+from sherlog.parsers.base import LogEvent
 
 CASCADE_WINDOW_SECONDS = 30  # B must start erroring within 30s of A
 ERROR_LEVELS = {"ERROR", "CRITICAL", "FATAL"}

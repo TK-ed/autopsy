@@ -1,10 +1,10 @@
-"""Read log events from stdin (e.g. kubectl logs my-pod | autopsy --stdin)."""
+"""Read log events from stdin (e.g. kubectl logs my-pod | sherlog --stdin)."""
 
 import sys
 from collections.abc import Iterator
 
-from autopsy.parsers.auto_detect import detect_format, get_parser
-from autopsy.parsers.base import LogEvent
+from sherlog.parsers.auto_detect import detect_format, get_parser
+from sherlog.parsers.base import LogEvent
 
 
 def read_stdin(service: str = "stdin") -> Iterator[LogEvent]:
