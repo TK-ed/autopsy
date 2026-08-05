@@ -2,7 +2,7 @@
 
 > Turn raw logs into incident postmortems — zero setup, fully local.
 
-[![PyPI version](https://badge.fury.io/py/autopsy-cli.svg)](https://badge.fury.io/py/autopsy-cli)
+[![PyPI version](https://badge.fury.io/py/mr-autopsy.svg)](https://badge.fury.io/py/autopsy-cli)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
