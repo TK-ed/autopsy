@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mr-autopsy"
-version = "0.1.0"
+version = "0.1.1"
 description = "Turn raw logs into incident postmortems — zero setup, fully local."
 readme = "README.md"
 license = { text = "MIT" }
