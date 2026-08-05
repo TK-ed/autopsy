@@ -117,10 +117,10 @@ autopsy/
 
 ```bash
 # Single log file
-autopsy --file app.log
+sherlog --file app.log
 
 # Multiple services
-autopsy --file app.log --file nginx.log --file redis.log
+sherlog --file app.log --file nginx.log --file redis.log
 
 # From Docker containers
 autopsy --docker my-api --docker my-worker --since 2h
@@ -129,15 +129,15 @@ autopsy --docker my-api --docker my-worker --since 2h
 kubectl logs my-pod --since=2h | autopsy --stdin --service api
 
 # Set time window (incident window)
-autopsy --file app.log --from "2026-08-04 14:00" --to "2026-08-04 16:00"
+sherlog --file app.log --from "2026-08-04 14:00" --to "2026-08-04 16:00"
 
 # Output formats
-autopsy --file app.log --output markdown   # default
-autopsy --file app.log --output json
-autopsy --file app.log --output html
+sherlog --file app.log --output markdown   # default
+sherlog --file app.log --output json
+sherlog --file app.log --output html
 
 # Save report
-autopsy --file app.log --save ./postmortem-2026-08-04.md
+sherlog --file app.log --save ./postmortem-2026-08-04.md
 ```
 
 ---

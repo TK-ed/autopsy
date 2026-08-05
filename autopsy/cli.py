@@ -72,10 +72,10 @@ def run(
     Analyze logs from files, Docker containers, or stdin and generate a postmortem.
 
     Examples:\n
-      autopsy --file app.log\n
-      autopsy --file app.log --file worker.log\n
-      autopsy --docker my-api --since 2h\n
-      kubectl logs my-pod | autopsy --stdin\n
+      sherlog --file app.log\n
+      sherlog --file app.log --file worker.log\n
+      sherlog --docker my-api --since 2h\n
+      kubectl logs my-pod | sherlog --stdin\n
     """
     console.print(
         Panel.fit(
