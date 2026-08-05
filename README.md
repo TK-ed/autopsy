@@ -258,14 +258,14 @@ git clone https://github.com/yourusername/autopsy
 cd autopsy
 
 # Create virtual environment
-python3 -m venv venv
+uv venv
 source venv/bin/activate
 
 # Install with dev dependencies
-pip install -e ".[dev]"
+uv pip install -e ".[dev]"
 
 # Run tests
-pytest tests/ -v
+python -m pytest tests/ -v
 ```
 
 Please open an issue before submitting a large PR — let's discuss the approach first.
@@ -295,7 +295,7 @@ No. autopsy is intentionally a post-incident tool. Use Prometheus, Grafana, or D
 
 ## 📝 License
 
-MIT © [Your Name](https://github.com/yourusername)
+MIT © [Tharun](https://github.com/TK-ed)
 
 ---
 
