@@ -2,18 +2,19 @@
 Fallback parser for plain/unknown log formats.
 Uses regex to extract timestamp + level from any line.
 """
+
 import re
-from typing import Optional
-from .base import LogEvent
+
 from autopsy.utils.timestamp import extract_timestamp
 
+from .base import LogEvent
+
 LEVEL_RE = re.compile(
-    r'\b(CRITICAL|FATAL|ERROR|ERR|WARN(?:ING)?|INFO|DEBUG|TRACE|NOTICE)\b',
-    re.IGNORECASE
+    r"\b(CRITICAL|FATAL|ERROR|ERR|WARN(?:ING)?|INFO|DEBUG|TRACE|NOTICE)\b", re.IGNORECASE
 )
 
 
-def parse_line(line: str, service: str = "unknown") -> Optional[LogEvent]:
+def parse_line(line: str, service: str = "unknown") -> LogEvent | None:
     line = line.strip()
     if not line:
         return None
@@ -33,9 +34,8 @@ def parse_line(line: str, service: str = "unknown") -> Optional[LogEvent]:
 
     # message = everything after the level token (or the whole line)
     if m:
-        message = line[m.end():].strip(" :-|[]")
+        message = line[m.end() :].strip(" :-|[]")
     else:
         message = line
 
-    return LogEvent(timestamp=timestamp, level=level, message=message,
-                    service=service, raw=line)
+    return LogEvent(timestamp=timestamp, level=level, message=message, service=service, raw=line)

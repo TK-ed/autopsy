@@ -1,6 +1,7 @@
+from .cascade import detect_cascades
 from .error_spike import detect_error_spikes
 from .silence import detect_silences
-from .cascade import detect_cascades
+
 
 def run_all(events, buckets, services):
     anomalies = []

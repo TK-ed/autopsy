@@ -1,16 +1,15 @@
 """Detect sudden spikes in error rate across time buckets."""
+
 from datetime import datetime
-from typing import List, Dict
 
-
-SPIKE_THRESHOLD      = 0.30   # error rate must cross this
-BASELINE_BUCKETS     = 5      # how many buckets to use for baseline
-MIN_EVENTS_PER_BUCKET = 3     # ignore buckets with too few events
+SPIKE_THRESHOLD = 0.30  # error rate must cross this
+BASELINE_BUCKETS = 5  # how many buckets to use for baseline
+MIN_EVENTS_PER_BUCKET = 3  # ignore buckets with too few events
 
 
 def detect_error_spikes(
-    rates: Dict[datetime, float],
-) -> List[dict]:
+    rates: dict[datetime, float],
+) -> list[dict]:
     """
     rates: output of window.error_rate_per_bucket()
     Returns list of anomaly dicts.
@@ -24,7 +23,7 @@ def detect_error_spikes(
             continue
 
         # compute baseline from previous buckets
-        baseline_window = timestamps[max(0, i - BASELINE_BUCKETS):i]
+        baseline_window = timestamps[max(0, i - BASELINE_BUCKETS) : i]
         if not baseline_window:
             baseline = 0.0
         else:
@@ -32,15 +31,16 @@ def detect_error_spikes(
 
         # spike = rate is significantly above baseline
         if rate > baseline + 0.20:
-            anomalies.append({
-                "type":      "error_spike",
-                "timestamp": ts,
-                "severity":  "CRITICAL" if rate > 0.8 else "ERROR",
-                "title":     f"Error spike detected",
-                "detail":    (
-                    f"Error rate jumped to {rate*100:.1f}% "
-                    f"(baseline: {baseline*100:.1f}%)"
-                ),
-            })
+            anomalies.append(
+                {
+                    "type": "error_spike",
+                    "timestamp": ts,
+                    "severity": "CRITICAL" if rate > 0.8 else "ERROR",
+                    "title": "Error spike detected",
+                    "detail": (
+                        f"Error rate jumped to {rate * 100:.1f}% (baseline: {baseline * 100:.1f}%)"
+                    ),
+                }
+            )
 
     return anomalies

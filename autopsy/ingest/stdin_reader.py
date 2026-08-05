@@ -1,8 +1,10 @@
 """Read log events from stdin (e.g. kubectl logs my-pod | autopsy --stdin)."""
+
 import sys
-from typing import Iterator
-from autopsy.parsers.base import LogEvent
+from collections.abc import Iterator
+
 from autopsy.parsers.auto_detect import detect_format, get_parser
+from autopsy.parsers.base import LogEvent
 
 
 def read_stdin(service: str = "stdin") -> Iterator[LogEvent]:

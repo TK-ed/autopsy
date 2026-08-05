@@ -2,16 +2,17 @@
 Auto-detect the log format of a file/stream and return the right parser.
 Strategy: sample first 20 non-empty lines and score each parser.
 """
+
 import json
 import re
-from typing import Callable
+from collections.abc import Callable
 
-LOGFMT_RE = re.compile(r'\w+=\S+')
+LOGFMT_RE = re.compile(r"\w+=\S+")
 
 
 def detect_format(lines: list[str]) -> str:
     """Returns 'json', 'logfmt', or 'plaintext'."""
-    sample = [l.strip() for l in lines if l.strip()][:20]
+    sample = [line.strip() for line in lines if line.strip()][:20]
     json_score = logfmt_score = 0
 
     for line in sample:
@@ -35,9 +36,12 @@ def detect_format(lines: list[str]) -> str:
 def get_parser(fmt: str) -> Callable:
     if fmt == "json":
         from autopsy.parsers import json_parser
+
         return json_parser.parse_line
     if fmt == "logfmt":
         from autopsy.parsers import logfmt_parser
+
         return logfmt_parser.parse_line
     from autopsy.parsers import plaintext_parser
+
     return plaintext_parser.parse_line

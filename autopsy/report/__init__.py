@@ -1,1 +1,3 @@
-from . import markdown
+from . import markdown as markdown
+
+__all__ = ["markdown"]

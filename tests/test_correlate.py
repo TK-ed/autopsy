@@ -1,15 +1,16 @@
 """Tests for timeline building and windowing."""
-import pytest
-from datetime import datetime, timezone
-from autopsy.parsers.base      import LogEvent
+
+from datetime import UTC, datetime
+
 from autopsy.correlate.timeline import build_timeline, filter_window
-from autopsy.correlate.window   import bucket_events, error_rate_per_bucket
+from autopsy.correlate.window import bucket_events, error_rate_per_bucket
+from autopsy.parsers.base import LogEvent
 
 
 def make_event(ts_str, level="INFO", service="api", msg="test"):
     ts = datetime.fromisoformat(ts_str)
     if ts.tzinfo is None:
-        ts = ts.replace(tzinfo=timezone.utc)
+        ts = ts.replace(tzinfo=UTC)
     return LogEvent(timestamp=ts, level=level, service=service, message=msg, raw=msg)
 
 
@@ -27,8 +28,8 @@ class TestTimeline:
             make_event("2026-08-04T14:00:00+00:00"),
             make_event("2026-08-04T15:00:00+00:00"),
         ]
-        from_dt = datetime(2026, 8, 4, 13, 30, tzinfo=timezone.utc)
-        to_dt   = datetime(2026, 8, 4, 14, 30, tzinfo=timezone.utc)
+        from_dt = datetime(2026, 8, 4, 13, 30, tzinfo=UTC)
+        to_dt = datetime(2026, 8, 4, 14, 30, tzinfo=UTC)
         result = filter_window(events, from_dt, to_dt)
         assert len(result) == 1
         assert result[0].timestamp.hour == 14
@@ -44,5 +45,5 @@ class TestBuckets:
         ]
         buckets = bucket_events(events, bucket_seconds=60)
         rates = error_rate_per_bucket(buckets)
-        rate = list(rates.values())[0]
+        rate = next(iter(rates.values()))
         assert abs(rate - 0.5) < 0.01

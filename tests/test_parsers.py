@@ -1,9 +1,9 @@
 """Tests for log parsers."""
-import pytest
-from autopsy.parsers.json_parser     import parse_line as json_parse
-from autopsy.parsers.logfmt_parser   import parse_line as logfmt_parse
+
+from autopsy.parsers.auto_detect import detect_format
+from autopsy.parsers.json_parser import parse_line as json_parse
+from autopsy.parsers.logfmt_parser import parse_line as logfmt_parse
 from autopsy.parsers.plaintext_parser import parse_line as plain_parse
-from autopsy.parsers.auto_detect     import detect_format
 
 
 class TestJsonParser:
@@ -11,7 +11,7 @@ class TestJsonParser:
         line = '{"time":"2026-08-04T14:00:01Z","level":"error","msg":"DB timeout","service":"api"}'
         e = json_parse(line)
         assert e is not None
-        assert e.level   == "ERROR"
+        assert e.level == "ERROR"
         assert e.service == "api"
         assert "DB timeout" in e.message
 
@@ -32,7 +32,7 @@ class TestLogfmtParser:
         line = 'ts=2026-08-04T14:00:00Z level=error msg="job failed" service=worker'
         e = logfmt_parse(line)
         assert e is not None
-        assert e.level   == "ERROR"
+        assert e.level == "ERROR"
         assert e.service == "worker"
         assert "job failed" in e.message
 

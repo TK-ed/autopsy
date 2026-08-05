@@ -1,12 +1,12 @@
 """Base log event dataclass and abstract parser."""
+
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Optional
 
 
 @dataclass
 class LogEvent:
-    timestamp: Optional[datetime]
+    timestamp: datetime | None
     level: str
     message: str
     service: str
