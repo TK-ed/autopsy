@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "autopsy-cli"
+name = "mr-autopsy"
 version = "0.1.0"
 description = "Turn raw logs into incident postmortems — zero setup, fully local."
 readme = "README.md"
@@ -39,9 +39,8 @@ dev = [
 autopsy = "autopsy.cli:app"
 
 [project.urls]
-Homepage    = "https://github.com/yourusername/autopsy"
-Repository  = "https://github.com/yourusername/autopsy"
-"Bug Tracker" = "https://github.com/yourusername/autopsy/issues"
+Repository  = "https://github.com/TK-ed/autopsy"
+"Bug Tracker" = "https://github.com/TK-ed/autopsy/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["autopsy"]
