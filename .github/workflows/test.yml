@@ -16,4 +16,4 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: pip install --upgrade pip
       - run: pip install typer rich python-dateutil pytest pytest-cov
-      - run: pytest tests/ -v
+      - run: python -m pytest -v
