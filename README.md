@@ -75,7 +75,7 @@ Every observability tool assumes you have a budget, a team, and weeks to set up 
 ## 🚀 Install
 
 ```bash
-pip install autopsy-cli
+pip install mr-autopsy==0.1.0
 ```
 
 Requires Python 3.11+
