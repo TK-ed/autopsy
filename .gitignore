@@ -1,0 +1,68 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+.VENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# PyInstaller / cx_Freeze / py2exe artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+*.pyc
+*.pyo
+*.pyd
+
+# Testing / coverage
+.venv/
+.pytest_cache/
+coverage/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+*.log
+
+# Jupyter / notebooks
+.ipynb_checkpoints
+
+# Editor / IDE folders
+ .idea/
+.vscode/
+.vim/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# MyPy / type checking caches
+.mypy_cache/
+.pyre/
+.typing/
+
+# Misc
+.env
+.env.*
+.envrc
+.env.*.backup
+.secret*
+.kube/
+.kubectl/
